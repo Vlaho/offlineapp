@@ -1,0 +1,24 @@
+<mvc:View
+	controllerName="test.offlineapp.controller.Main"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+<Page title="Hello World">
+<content>
+	<List items="{ path: 'customers>/' }" growing="true">
+	 	<headerToolbar>
+			<Toolbar>
+				<Title text="Customers..." ></Title>
+				<ToolbarSpacer />
+				<Button icon="sap-icon://inbox" press="onSaveLocal" />
+				<Button icon="sap-icon://outbox" press="onLoadLocal" />
+			</Toolbar>
+		</headerToolbar>
+		<StandardListItem title="{customers>ContactName}" />
+	</List>
+</content>
+</Page>
+</mvc:View>

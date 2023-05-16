@@ -1,0 +1,8 @@
+FROM nginx:1.21-alpine
+
+EXPOSE 8100
+
+COPY docker/default.conf /etc/nginx/conf.d/
+
+RUN mkdir /etc/nginx/conf.d/ssl
+COPY docker/*.pem /etc/nginx/conf.d/ssl/

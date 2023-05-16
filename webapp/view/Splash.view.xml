@@ -1,0 +1,6 @@
+<mvc:View controllerName="test.offlineapp.controller.Splash" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" >
+    <FlexBox alignItems="Center" justifyContent="Center" height="100%"> 
+        <Image src="{img>/pic}" height="{img>/height}" />
+    </FlexBox>
+</mvc:View>

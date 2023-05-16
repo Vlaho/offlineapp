@@ -1,0 +1,11 @@
+version: '3'
+
+networks:
+  local:
+
+services:
+  proxy:
+    image: nginx:demo
+    container_name: nginx_proxy
+    ports:
+      - "8100:8100"
