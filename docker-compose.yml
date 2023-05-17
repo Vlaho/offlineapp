@@ -4,8 +4,33 @@ networks:
   local:
 
 services:
+  web:
+    image: node:16.20-alpine
+    container_name: offlineapp_web
+    networks:
+      - local
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command:
+      - tail
+      - -f
+      - /dev/null
+
   proxy:
     image: nginx:demo
     container_name: nginx_proxy
+    networks:
+      - local
+    expose:
+      - "8100"
+      - "8200"
     ports:
       - "8100:8100"
+      - "8200:8200"
+
+  preview:
+    image: offlineapp:preview
+    container_name: offlineapp_preview
+    networks:
+      - local
