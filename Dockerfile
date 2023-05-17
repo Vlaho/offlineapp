@@ -1,8 +1,8 @@
-FROM nginx:1.21-alpine
+FROM node:16.20-alpine as build
 
-EXPOSE 8100
+WORKDIR /app
+COPY . .
+RUN npm install && npm run build
 
-COPY docker/default.conf /etc/nginx/conf.d/
-
-RUN mkdir /etc/nginx/conf.d/ssl
-COPY docker/*.pem /etc/nginx/conf.d/ssl/
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
