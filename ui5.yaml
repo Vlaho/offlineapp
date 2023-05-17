@@ -5,8 +5,8 @@ metadata:
   name: test.offlineapp
 type: application
 framework:
-  name: OpenUI5
-  version: "1.113.0"
+  name: SAPUI5
+  version: "1.112.0"
   libraries:
     - name: sap.f
     - name: sap.m

@@ -5,7 +5,7 @@
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
-      "version": "0.0.2"
+      "version": "0.0.3"
     },
     "serviceWorker": {
       "file": "sw.js",
@@ -22,6 +22,14 @@
         {
           "url": "https://openui5.hana.ondemand.com/resources",
           "type": "ui5resource"
+        },
+        {
+          "url": [
+            "https://localhost:8100/i18n/i18n.properties",
+            "https://localhost:8100/i18n/i18n_en.properties"
+          ],
+          "version": "0.0.2",
+          "type": "precache"
         }
       ]
     },
